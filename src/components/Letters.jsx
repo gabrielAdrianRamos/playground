@@ -1,114 +1,113 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import sound from "../source/pick-92276.mp3";
+import Modal from "./Modal";
 
 export default function Letters(props) {
-  const [letter, setLetter] = useState("Click the letters");
+  const [letter, setLetter] = useState("");
+  const [show, setShow] = useState(false);
 
   function clicked(event) {
     setLetter(event.target.value);
-    console.log(event.target.value);
+    setShow(true);
+    play();
   }
 
-  useEffect(() => {
-    document.addEventListener("keypress", detectKeyPress, true);
-  }, []);
-
-  const detectKeyPress = (e) => {
-    const str = e.key;
-    const capLetter = str.charAt(0).toUpperCase();
-    setLetter(capLetter);
-    console.log(capLetter);
-  };
+  function play() {
+    new Audio(sound).play();
+  }
 
   return (
     <div className="container">
-      <div className="display-letter">
-        <h1>{letter}</h1>
-      </div>
-      <div className="letter-container" onClick={clicked}>
-        <button id="btn" value="A">
+      <div className="button-container">
+        <button id="btn" value="A" onClick={clicked}>
           A
         </button>
-        <button id="btn" value="B">
+        <button id="btn" value="B" onClick={clicked}>
           B
         </button>
-        <button id="btn" value="C">
+        <button id="btn" value="C" onClick={clicked}>
           C
         </button>
-        <button id="btn" value="D">
+        <button id="btn" value="D" onClick={clicked}>
           D
         </button>
-        <button id="btn" value="E">
+        <button id="btn" value="E" onClick={clicked}>
           E
         </button>
-        <button id="btn" value="F">
+        <button id="btn" value="F" onClick={clicked}>
           F
         </button>
-        <button id="btn" value="G">
+        <button id="btn" value="G" onClick={clicked}>
           G
         </button>
-        <button id="btn" value="H">
+        <button id="btn" value="H" onClick={clicked}>
           H
         </button>
-        <button id="btn" value="I">
+        <button id="btn" value="I" onClick={clicked}>
           I
         </button>
-        <button id="btn" value="J">
+        <button id="btn" value="J" onClick={clicked}>
           J
         </button>
-        <button id="btn" value="K">
+        <button id="btn" value="K" onClick={clicked}>
           K
         </button>
-        <button id="btn" value="L">
+        <button id="btn" value="L" onClick={clicked}>
           L
         </button>
-        <button id="btn" value="M">
+        <button id="btn" value="M" onClick={clicked}>
           M
         </button>
-        <button id="btn" value="N">
+        <button id="btn" value="N" onClick={clicked}>
           N
         </button>
-        <button id="btn" value="O">
+        <button id="btn" value="O" onClick={clicked}>
           O
         </button>
-        <button id="btn" value="P">
+        <button id="btn" value="P" onClick={clicked}>
           P
         </button>
-        <button id="btn" value="Q">
+        <button id="btn" value="Q" onClick={clicked}>
           Q
         </button>
-        <button id="btn" value="R">
+        <button id="btn" value="R" onClick={clicked}>
           R
         </button>
-        <button id="btn" value="S">
+        <button id="btn" value="S" onClick={clicked}>
           S
         </button>
-        <button id="btn" value="T">
+        <button id="btn" value="T" onClick={clicked}>
           T
         </button>
-        <button id="btn" value="U">
+        <button id="btn" value="U" onClick={clicked}>
           U
         </button>
-        <button id="btn" value="V">
+        <button id="btn" value="V" onClick={clicked}>
           V
         </button>
-        <button id="btn" value="W">
+        <button id="btn" value="W" onClick={clicked}>
           W
         </button>
-        <button id="btn" value="X">
+        <button id="btn" value="X" onClick={clicked}>
           X
         </button>
-        <button id="btn" value="Y">
+        <button id="btn" value="Y" onClick={clicked}>
           Y
         </button>
-        <button id="btn" value="Z">
+        <button id="btn" value="Z" onClick={clicked}>
           Z
         </button>
+        <Modal onClose={() => setShow(false)} show={show} value={letter} />
       </div>
+
       <button
         className="switch"
-        onClick={() => props.onFormSwitch("main-page")}
+        onClick={() => {
+          props.onFormSwitch("main-page");
+          play();
+        }}
       >
         <FontAwesomeIcon
           icon={faArrowRight}

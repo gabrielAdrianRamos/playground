@@ -1,22 +1,37 @@
 import React from "react";
+import imageLetters from "../imageLetter";
 
-export default function Modal({ setIsOpen }) {
+export default function Modal(props) {
+  if (!props.show) {
+    return null;
+  }
   return (
-    <>
-      <div className="darkBG" onClick={() => setIsOpen(false)}></div>
-      <div className="centered">
-        <div className="modal">
-          <div className="header">
-            <h5 className="dialog">Dialog</h5>
-          </div>
-          <button className="closeBtn" onClick={() => setIsOpen(false)}>
+    <div className="modal" onClick={props.onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-close">
+          <button onClick={props.onClose} className="button">
             &times;
           </button>
-          <div className="modalContent">
-            Are you sure you want to delete the item?
-          </div>
+        </div>
+        <div className="modal-body">
+          <h1>{props.value}</h1>
+
+          {imageLetters
+            .filter((e, index) => e.value === props.value)
+            .map((imageLetter, index) => {
+              return (
+                <div className="image-container">
+                  <img
+                    src={imageLetter.imgSource}
+                    alt="abc"
+                    className="modal-image"
+                  />
+                  <label htmlFor="modal-image">{imageLetter.name}</label>
+                </div>
+              );
+            })}
         </div>
       </div>
-    </>
+    </div>
   );
 }

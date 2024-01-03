@@ -13,6 +13,94 @@ body {
   justify-content: center;
   align-items: center;
 }
+.title {
+  margin-top: 5rem;
+  font-size: 8rem;
+  font-weight: bolder;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+span:nth-child(1) {
+  color: #e9b824;
+  display: inline-block;
+  transform: rotate(10deg) translateX(15px);
+}
+
+span:nth-child(2) {
+  color: #ffe382;
+  display: inline-block;
+  transform: translate(5px, 20px);
+}
+span:nth-child(3) {
+  color: #87c4ff;
+  display: inline-block;
+  transform: rotate(-20deg) translateY(-15px);
+}
+span:nth-child(4) {
+  color: #27005d;
+  display: inline-block;
+  transform: translate(2px, 10px);
+}
+span:nth-child(5) {
+  color: #a6ff96;
+  display: inline-block;
+  transform: rotate(-10deg) translateY(-20px);
+}
+span:nth-child(6) {
+  color: #ffb6d9;
+  display: inline-block;
+  transform: rotate(20deg) translateX(-10px);
+}
+span:nth-child(8) {
+  color: #9336b4;
+  display: inline-block;
+  transform: rotate(-10deg) translateX(15px);
+}
+span:nth-child(9) {
+  color: #ffbfa9;
+  display: inline-block;
+  transform: rotate(5deg) translate(2px, -10px);
+}
+span:nth-child(10) {
+  color: #39b5e0;
+  display: inline-block;
+  transform: translate(1px, 10px);
+}
+span:nth-child(11) {
+  color: #16ff00;
+  display: inline-block;
+  transform: rotate(15deg) translateX(-20px);
+}
+span:nth-child(12) {
+  color: #2192ff;
+  display: inline-block;
+  transform: rotate(-15deg) translate(-35px, 10px);
+}
+span:nth-child(13) {
+  color: #3ec70b;
+  display: inline-block;
+  transform: rotate(10deg) translateX(-20px);
+}
+span:nth-child(14) {
+  color: #fc2947;
+  display: inline-block;
+  transform: translate(-10px, 30px);
+}
+span:nth-child(15) {
+  color: #ed6663;
+  display: inline-block;
+  transform: rotate(-10deg) translate(-5px, -25px);
+}
+span:nth-child(16) {
+  color: #aa14f0;
+  display: inline-block;
+  transform: translateX(-15px);
+}
+span:nth-child(17) {
+  color: #709053;
+  display: inline-block;
+  transform: rotate(25deg) translate(-5px, 30px);
+}
 
 .main-letter {
   position: fixed;
@@ -30,9 +118,9 @@ body {
   box-shadow: 32px 32px 64px #1e9084, -32px -32px 64px #24a89c;
 }
 
-img {
-  height: 200px;
-  width: 250px;
+.main-image {
+  height: 250px;
+  width: 300px;
   background-color: inherit;
   object-fit: fill;
   -webkit-transform: scale(1);
@@ -41,7 +129,7 @@ img {
   transition: 0.3s ease-in-out;
 }
 
-img:hover {
+.main-image:hover {
   -webkit-transform: scale(1);
   transform: scale(1.5);
 }
@@ -65,27 +153,17 @@ img:hover {
 /* Components */
 
 .container {
-  margin-top: -35px;
+  margin-top: 8rem;
 }
 
-.display-letter {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-}
-
-h1 {
-  font-size: 150px;
-  color: #fff5ee;
-  text-shadow: 10px 10px #1aacac;
-}
-
-.letter-container {
+.button-container {
+  position: fixed;
   display: flex;
   flex-wrap: wrap;
+  align-content: center;
   justify-content: center;
-  align-items: center;
-  margin: 0.5rem 13rem;
+  margin: 1rem 13rem;
+  padding: 7rem;
 }
 
 #btn {
@@ -134,12 +212,6 @@ h1 {
   transform: scale(1.5);
 }
 
-/* .switch:active {
-  background-color: #ee9322;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-} */
-
 .switch-alpha {
   position: fixed;
   width: 60px;
@@ -163,143 +235,63 @@ h1 {
   transform: scale(1.5);
 }
 
-/* .switch-alpha:active {
-  background-color: #ee9322;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-} */
-
-@media only screen and (max-width: 600px) {
-  .letter-container .container .main {
-    width: 100%;
-  }
-}
-
 /* Modal */
 
-.darkBG {
-  background-color: rgba(0, 0, 0, 0.2);
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-}
-
-.centered {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .modal {
-  width: 250px;
-  height: 170px;
-  background: white;
-  color: white;
-  z-index: 10;
-  border-radius: 16px;
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-}
-
-.modalHeader {
-  height: 50px;
-  background: white;
-  overflow: hidden;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-}
-
-.heading {
-  margin: 0;
-  padding: 10px;
-  color: #2c3e50;
-  font-weight: 500;
-  font-size: 18px;
-  text-align: center;
-}
-
-.modalContent {
-  padding: 10px;
-  font-size: 14px;
-  color: #2c3e50;
-  text-align: center;
-}
-
-.modalActions {
-  position: absolute;
-  bottom: 2px;
-  margin-bottom: 10px;
-  width: 100%;
-}
-
-.actionsContainer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.closeBtn {
-  cursor: pointer;
-  font-weight: 500;
-  padding: 4px 8px;
-  border-radius: 8px;
-  border: none;
-  font-size: 18px;
-  color: #2c3e50;
-  background: white;
-  transition: all 0.25s ease;
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
-  position: absolute;
-  right: 0;
+  position: fixed;
+  left: 0;
   top: 0;
-  align-self: flex-end;
-  margin-top: -7px;
-  margin-right: -7px;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.closeBtn:hover {
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-  transform: translate(-4px, 4px);
+.modal-content {
+  width: 700px;
+  height: 500px;
+  background-color: #fdf0f0;
+  border-radius: 10px;
 }
 
-.deleteBtn {
-  margin-top: 10px;
-  cursor: pointer;
-  font-weight: 500;
-  padding: 11px 28px;
-  border-radius: 12px;
-  font-size: 0.8rem;
+.modal-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-body > h1 {
+  padding: 1rem 5rem;
+  font-size: 200px;
+  color: #1f4172;
+  filter: drop-shadow(0px 0px 5px #fadada);
+}
+
+.image-container {
+  display: grid;
+}
+
+.modal-image {
+  padding: 1rem;
+  height: 150px;
+  width: 200px;
+  object-fit: contain;
+}
+
+label {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.modal-close {
+  padding: 10px;
+  float: right;
+}
+
+.button {
+  background: transparent;
   border: none;
-  color: #fff;
-  background: #ff3e4e;
-  transition: all 0.25s ease;
-}
-
-.deleteBtn:hover {
-  box-shadow: 0 10px 20px -10px rgba(255, 62, 78, 0.6);
-  transform: translateY(-5px);
-  background: #ff3e4e;
-}
-
-.cancelBtn {
-  margin-top: 10px;
-  cursor: pointer;
-  font-weight: 500;
-  padding: 11px 28px;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  border: none;
-  color: #2c3e50;
-  background: #fcfcfc;
-  transition: all 0.25s ease;
-}
-
-.cancelBtn:hover {
-  box-shadow: none;
-  transform: none;
-  background: whitesmoke;
+  font-size: 3rem;
 }

@@ -1,35 +1,51 @@
-import React, { useEffect } from "react";
-import sound from "../source/mixkit-game-click-1114.wav";
+import React from "react";
+import sound from "../source/pick-92276.mp3";
+import abc from "../source/letters.png";
+import number from "../source/numbers.png";
 
 export default function MainPage(props) {
-  useEffect(() => {
-    document.addEventListener("click", play, true);
-  }, []);
-
   function play() {
     new Audio(sound).play();
   }
 
   return (
     <div className="main">
-      <h1>Toby's Playground</h1>
+      <div className="title">
+        <span>T</span>
+        <span>O</span>
+        <span>B</span>
+        <span>Y</span>
+        <span>'</span>
+        <span>S</span>
+        <span> </span>
+        <span>P</span>
+        <span>L</span>
+        <span>A</span>
+        <span>Y</span>
+        <span>G</span>
+        <span>R</span>
+        <span>O</span>
+        <span>U</span>
+        <span>N</span>
+        <span>D</span>
+      </div>
       <div
         className="main-letter"
-        onClick={() => props.onFormSwitch("alphabets")}
+        onClick={() => {
+          props.onFormSwitch("alphabets");
+          play();
+        }}
       >
-        <img
-          src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/25879/animal-alphabet-clipart-md.png"
-          alt="abc"
-        />
+        <img src={abc} alt="abc" className="main-image" />
       </div>
       <div
         className="main-number"
-        onClick={() => props.onFormSwitch("numbers")}
+        onClick={() => {
+          props.onFormSwitch("numbers");
+          play();
+        }}
       >
-        <img
-          src="https://www.seekpng.com/png/full/117-1174359_123-blocks-financial-statement-analysis-simplified-an-accounting.png"
-          alt="123"
-        />
+        <img src={number} alt="123" className="main-image" />
       </div>
     </div>
   );

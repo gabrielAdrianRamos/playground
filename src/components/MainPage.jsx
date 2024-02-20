@@ -9,7 +9,7 @@ export default function MainPage(props) {
   }
 
   useEffect(() => {
-    play();
+    window.onload = play();
   }, []);
 
   return (

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import sound from "../source/pick-92276.mp3";
 import Modal from "./Modal";
 
 export default function Letters(props) {
@@ -11,11 +10,6 @@ export default function Letters(props) {
   function clicked(event) {
     setLetter(event.target.value);
     setShow(true);
-    play();
-  }
-
-  function play() {
-    new Audio(sound).play();
   }
 
   return (
@@ -106,7 +100,6 @@ export default function Letters(props) {
         className="switch"
         onClick={() => {
           props.onFormSwitch("main-page");
-          play();
         }}
       >
         <FontAwesomeIcon

@@ -252,7 +252,7 @@ span:nth-child(17) {
 .modal-content {
   width: 700px;
   height: 500px;
-  background-color: #fdf0f0;
+  background-color: #fbfcf8;
   border-radius: 10px;
 }
 
@@ -266,7 +266,7 @@ span:nth-child(17) {
   padding: 1rem 5rem;
   font-size: 200px;
   color: #1f4172;
-  filter: drop-shadow(0px 0px 5px #fadada);
+  filter: drop-shadow(0px 0px 5px #e1e2df);
 }
 
 .image-container {

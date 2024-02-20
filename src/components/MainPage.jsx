@@ -1,5 +1,5 @@
-import React from "react";
-import sound from "../source/pick-92276.mp3";
+import React, { useEffect } from "react";
+import sound from "../source/Welcome.mp3";
 import abc from "../source/letters.png";
 import number from "../source/numbers.png";
 
@@ -7,6 +7,10 @@ export default function MainPage(props) {
   function play() {
     new Audio(sound).play();
   }
+
+  useEffect(() => {
+    play();
+  }, []);
 
   return (
     <div className="main">
@@ -33,7 +37,6 @@ export default function MainPage(props) {
         className="main-letter"
         onClick={() => {
           props.onFormSwitch("alphabets");
-          play();
         }}
       >
         <img src={abc} alt="abc" className="main-image" />
@@ -42,7 +45,6 @@ export default function MainPage(props) {
         className="main-number"
         onClick={() => {
           props.onFormSwitch("numbers");
-          play();
         }}
       >
         <img src={number} alt="123" className="main-image" />

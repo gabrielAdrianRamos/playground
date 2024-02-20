@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import sound from "../source/pick-92276.mp3";
 import Modal from "./Modal";
 
 export default function Numbers(props) {
@@ -11,11 +10,6 @@ export default function Numbers(props) {
   function clickedNumber(event) {
     setNumbers(event.target.value);
     setShow(true);
-    play();
-  }
-
-  function play() {
-    new Audio(sound).play();
   }
 
   return (
@@ -60,7 +54,6 @@ export default function Numbers(props) {
         className="switch-alpha"
         onClick={() => {
           props.onFormSwitch("main-page");
-          play();
         }}
       >
         <FontAwesomeIcon

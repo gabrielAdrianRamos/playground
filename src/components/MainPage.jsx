@@ -13,7 +13,7 @@ export default function MainPage(props) {
   }, []);
 
   return (
-    <div className="main">
+    <>
       <div className="title">
         <span>T</span>
         <span>O</span>
@@ -33,22 +33,24 @@ export default function MainPage(props) {
         <span>N</span>
         <span>D</span>
       </div>
-      <div
-        className="main-letter"
-        onClick={() => {
-          props.onFormSwitch("alphabets");
-        }}
-      >
-        <img src={abc} alt="abc" className="main-image" />
+      <div className="container-box">
+        <div
+          className="main-letter"
+          onClick={() => {
+            props.onFormSwitch("alphabets");
+          }}
+        >
+          <img src={abc} alt="abc" className="main-image" />
+        </div>
+        <div
+          className="main-number"
+          onClick={() => {
+            props.onFormSwitch("numbers");
+          }}
+        >
+          <img src={number} alt="123" className="main-image" />
+        </div>
       </div>
-      <div
-        className="main-number"
-        onClick={() => {
-          props.onFormSwitch("numbers");
-        }}
-      >
-        <img src={number} alt="123" className="main-image" />
-      </div>
-    </div>
+    </>
   );
 }

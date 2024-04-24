@@ -1,19 +1,23 @@
 import React, { useEffect } from "react";
-import sound from "../source/Welcome.mp3";
+import sound from "../source/backgroundmusic.mp3";
 import abc from "../source/letters.png";
 import number from "../source/numbers.png";
+import draw from "../source/sketchbook.png";
 
 export default function MainPage(props) {
-  function play() {
-    new Audio(sound).play();
-  }
+  // function play() {
+  //   new Audio(sound).play();
+  // }
 
-  useEffect(() => {
-    window.onload = play();
-  }, []);
+  // useEffect(() => {
+  //   window.onload = play();
+  // }, []);
 
   return (
     <>
+      <audio autoPlay loop preload="auto">
+        <source src={sound} type="audio/mpeg" />
+      </audio>
       <div className="title">
         <span>T</span>
         <span>O</span>
@@ -49,6 +53,14 @@ export default function MainPage(props) {
           }}
         >
           <img src={number} alt="123" className="main-image" />
+        </div>
+        <div
+          className="canvas"
+          onClick={() => {
+            props.onFormSwitch("canvas-drawer");
+          }}
+        >
+          <img src={draw} alt="sketchbook" className="main-image" />
         </div>
       </div>
     </>

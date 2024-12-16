@@ -1,21 +1,13 @@
-import React, { useEffect } from "react";
-import sound from "../source/backgroundmusic.mp3";
+import React from "react";
+import sound from "../source/Welcome.mp3";
 import abc from "../source/letters.png";
 import number from "../source/numbers.png";
 import draw from "../source/sketchbook.png";
 
 export default function MainPage(props) {
-  // function play() {
-  //   new Audio(sound).play();
-  // }
-
-  // useEffect(() => {
-  //   window.onload = play();
-  // }, []);
-
   return (
     <>
-      <audio autoPlay loop preload="auto">
+      <audio autoPlay preload="auto">
         <source src={sound} type="audio/mpeg" />
       </audio>
       <div className="title">
